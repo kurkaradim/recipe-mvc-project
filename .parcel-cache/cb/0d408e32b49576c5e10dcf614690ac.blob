@@ -1,0 +1,30 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "AJAX", function () {
+  return AJAX;
+});
+var _config = require("./config");
+const timeout = function (s) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error(`Request took too long! Timeout after ${s} second${s > 1 ? "s" : ""}`));
+    }, s * 1000);
+  });
+};
+const AJAX = async function (url, data = undefined) {
+  const fetchPro = data ? fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  }) : fetch(url);
+  try {
+    const res = await Promise.race([fetchPro, timeout(_config.timeoutSeconds)]);
+    if (!res.ok) throw new Error("Recipe not found " + res.status);
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};

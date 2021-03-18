@@ -5,7 +5,7 @@
   "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "build": "parcel build index.html"
   },
   "author": "Radim Kurka",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "config.js": "^0.1.0",
     "core-js": "^3.9.1",
     "fractional": "^1.0.0",
+    "img": "^3.0.3",
     "parcel": "^2.0.0-beta.2",
     "regenerator-runtime": "^0.13.7"
   }
