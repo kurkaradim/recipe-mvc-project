@@ -5,7 +5,8 @@
   "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "heroku-postbuild": "parcel build index.html"
   },
   "author": "Radim Kurka",
   "license": "ISC",
