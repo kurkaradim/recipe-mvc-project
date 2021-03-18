@@ -1,0 +1,25 @@
+{
+  "name": "forkifyradim",
+  "version": "1.0.0",
+  "description": "recipe app",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Radim Kurka",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "config.js": "^0.1.0",
+    "core-js": "^3.9.1",
+    "fractional": "^1.0.0",
+    "parcel": "^2.0.0-beta.2",
+    "regenerator-runtime": "^0.13.7"
+  }
+}
